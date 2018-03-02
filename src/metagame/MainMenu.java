@@ -1,5 +1,8 @@
 package metagame;
 
+import java.io.File;
+import java.net.URL;
+
 import javafx.application.Application;
 
 import javafx.beans.InvalidationListener;
@@ -8,6 +11,8 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -67,11 +72,17 @@ public class MainMenu extends Application {
 		title.setFill(Color.WHITE);
 		title.setFont(Font.font(java.awt.Font.SANS_SERIF, 40));
 
+		 String path = MainMenu.class.getResource("/M1.mp3").toString();
+	        Media media = new Media(path);
+	        MediaPlayer mp = new MediaPlayer(media);
+	        mp.play();
+		
 		// creation of the main menu scene
 		root = new Group(start, sett, exit, stats, title);
 		scene = new Scene(root, 800, 400, Color.BLACK);
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
 	}
 
 	// actions performed when "start" is clicked
@@ -80,7 +91,7 @@ public class MainMenu extends Application {
 		Text title = new Text(320, 100, "Select Major");
 		title.setFill(Color.WHITE);
 		title.setFont(Font.font(java.awt.Font.SANS_SERIF, 40));
-		Button mj1 = new Button("Enginnering");
+		Button mj1 = new Button("Engineering");
 		Button mj2 = new Button("Comp Sci");
 		Button mj3 = new Button("Mathematics");
 		Button mj4 = new Button("Accounting");
