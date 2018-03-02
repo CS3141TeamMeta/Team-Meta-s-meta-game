@@ -64,7 +64,7 @@ public class MainMenu extends Application {
 		// actions of buttons
 		start.setOnAction(e -> {
 			game(primaryStage);
-			mp.stop();
+			// mp.stop();
 		});
 
 		sett.setOnAction(e -> {
