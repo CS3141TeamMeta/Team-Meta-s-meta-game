@@ -1,8 +1,5 @@
 package metagame;
 
-import java.io.File;
-import java.net.URL;
-
 import javafx.application.Application;
 
 import javafx.beans.InvalidationListener;
@@ -11,6 +8,8 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -32,13 +31,24 @@ public class MainMenu extends Application {
 
 		// Title of Window
 		primaryStage.setTitle("Meta Game");
+		
 
 		// Creation of buttons on main menu
 		final Button sett = new Button("Settings");
+		sett.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-text-fill: white;");
 		final Button start = new Button("Start");
+		start.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-text-fill: white;");
 		final Button exit = new Button("Exit");
+		exit.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-text-fill: white;");
 		final Button stats = new Button("Stats");
-
+		stats.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-text-fill: white;");
+		
+		// Audio Player(Beta)
+		String path = MainMenu.class.getResource("/M1.mp3").toString();
+	    Media media = new Media(path);
+	    MediaPlayer mp = new MediaPlayer(media);
+	    mp.play();
+	    
 		// location of buttons
 		start.setLayoutX(380);
 		start.setLayoutY(200);
@@ -54,6 +64,7 @@ public class MainMenu extends Application {
 		// actions of buttons
 		start.setOnAction(e -> {
 			game(primaryStage);
+			mp.stop();
 		});
 
 		sett.setOnAction(e -> {
@@ -68,14 +79,10 @@ public class MainMenu extends Application {
 			primaryStage.close();
 		});
 		// Title on the main menu
-		final Text title = new Text(320, 100, "Meta Game");
+		final Text title = new Text(300, 100, "Meta Game");
 		title.setFill(Color.WHITE);
-		title.setFont(Font.font(java.awt.Font.SANS_SERIF, 40));
+		title.setFont(Font.font(java.awt.Font.MONOSPACED, 40));
 
-		 String path = MainMenu.class.getResource("/M1.mp3").toString();
-	        Media media = new Media(path);
-	        MediaPlayer mp = new MediaPlayer(media);
-	        mp.play();
 		
 		// creation of the main menu scene
 		root = new Group(start, sett, exit, stats, title);
@@ -88,7 +95,7 @@ public class MainMenu extends Application {
 	// actions performed when "start" is clicked
 	public void game(Stage ps) {
 		
-		Text title = new Text(320, 100, "Select Major");
+		Text title = new Text(300, 100, "Select Major");
 		title.setFill(Color.WHITE);
 		title.setFont(Font.font(java.awt.Font.SANS_SERIF, 40));
 		Button mj1 = new Button("Engineering");
@@ -118,7 +125,7 @@ public class MainMenu extends Application {
 	}
 
 	public void settings(Stage ps) {
-		final Text title = new Text(320, 100, "Settings");
+		final Text title = new Text(300, 100, "Settings");
 		title.setFill(Color.WHITE);
 		title.setFont(Font.font(java.awt.Font.SANS_SERIF, 40));
 		final Slider sl = new Slider();
@@ -148,7 +155,7 @@ public class MainMenu extends Application {
 	}
 
 	public void stats(Stage ps) {
-		final Text title = new Text(320, 100, "Stats");
+		final Text title = new Text(350, 100, "Stats");
 		title.setFill(Color.WHITE);
 		title.setFont(Font.font(java.awt.Font.SANS_SERIF, 40));
 		Button back = new Button("Back");
