@@ -1,0 +1,24 @@
+“You walk up to the desk to get your MTU ID.”
+“What’s your name?”
+“Gender?”
+“Alright, stand over in front of the camera, this’ll just take a second.”
+“Although your past is a bit hazy, you find yourself sitting in the middle of the crowd at an introductory presentation.”
+“Which major did you choose when you came to college?”
+“Ah, yes, you remember choosing (insert major here) as your major.” 
+“As you listen along, you realize thinking in the second person about yourself is weird, and suddenly, the text changes”
+“Although your choice to go to this college split you from your best friend, you still resolved to communicate with each other on a regular basis.”
+“You realize, to your surprise, that you forgot to put your friend’s name as a contact.”
+“Gender?”
+“As the overly enthusiastic presenters are met with nearly as enthusiastic responses, you wonder how your first year here will go.”
+“A few months go by…”
+“You wake up to the blaring of your roommate’s alarm at 7:30.” (insert alarm sound)
+“You groan and roll over, covering your ears with your pillow in a vain attempt to get rid of the noise.” (muffled alarm sound)
+“After what feels like hours, your roommate finally shuts off (his/her) alarm, gets up, and leaves.” (footsteps)
+“Muttering to yourself how your roommate should really pay more attention, you lazily grab your phone to check the time.”
+“8:45! Your first class is at 9:00!”
+“With a rush of nervous adrenaline, you climb off your bed, pull some clothes on, quickly check your backpack, and run out the door.”
+“Don’t forget to shut the door!”
+“Hearing your other roommate yell as you nearly make it away, you quickly shut the door and continue on your way.”
+
+“”What month is it again?” 
+“Looking to the calendar, you realize that it’s already February.”
