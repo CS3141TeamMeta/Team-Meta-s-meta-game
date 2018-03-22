@@ -4,12 +4,15 @@ import javafx.application.Application;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -76,27 +79,79 @@ public class MainMenu extends Application {
 			mp0.stop();
 			mp1.play();
 		});
+		
+		DropShadow shadow = new DropShadow();
+		start.addEventHandler(MouseEvent.MOUSE_ENTERED, 
+		    new EventHandler<MouseEvent>() {
+		        public void handle(MouseEvent e) {
+		            start.setEffect(shadow);
+		        }
+		});
+		start.addEventHandler(MouseEvent.MOUSE_EXITED, 
+		    new EventHandler<MouseEvent>() {
+		        public void handle(MouseEvent e) {
+		            start.setEffect(null);
+		        }
+		});
 
 		sett.setOnAction(e -> {
 			settings(primaryStage);
+		});
+		
+		sett.addEventHandler(MouseEvent.MOUSE_ENTERED, 
+		    new EventHandler<MouseEvent>() {
+		        public void handle(MouseEvent e) {
+		            sett.setEffect(shadow);
+		        }
+		});
+
+		sett.addEventHandler(MouseEvent.MOUSE_EXITED, 
+		    new EventHandler<MouseEvent>() {
+		        public void handle(MouseEvent e) {
+		            sett.setEffect(null);
+		        }
 		});
 
 		stats.setOnAction(e -> {
 			stats(primaryStage);
 		});
+		stats.addEventHandler(MouseEvent.MOUSE_ENTERED, 
+		    new EventHandler<MouseEvent>() {
+		        public void handle(MouseEvent e) {
+		            stats.setEffect(shadow);
+		        }
+		});
+		stats.addEventHandler(MouseEvent.MOUSE_EXITED, 
+		    new EventHandler<MouseEvent>() {
+		        public void handle(MouseEvent e) {
+		            stats.setEffect(null);
+		        }
+		});
 
 		exit.setOnAction(e -> {
 			primaryStage.close();
 		});
+		exit.addEventHandler(MouseEvent.MOUSE_ENTERED, 
+		    new EventHandler<MouseEvent>() {
+		        public void handle(MouseEvent e) {
+		            exit.setEffect(shadow);
+		        }
+		});
+		exit.addEventHandler(MouseEvent.MOUSE_EXITED, 
+		    new EventHandler<MouseEvent>() {
+		        public void handle(MouseEvent e) {
+		            exit.setEffect(null);
+		        }
+		});
 		// Title on the main menu
 		final Text title = new Text(300, 100, "Meta Game");
-		title.setFill(Color.WHITE);
+		title.setFill(Color.BLACK);
 		title.setFont(Font.font(java.awt.Font.MONOSPACED, 40));
 
 		
 		// creation of the main menu scene
 		root = new Group(start, sett, exit, stats, title);
-		scene = new Scene(root, 800, 400, Color.BLACK);
+		scene = new Scene(root, 800, 400, Color.WHITE);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		mp0.play();
