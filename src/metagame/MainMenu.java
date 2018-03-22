@@ -21,7 +21,18 @@ public class MainMenu extends Application {
 
 	Group root;
 	Scene scene;
-	
+	// Audio Player(Beta)
+	String path0 = MainMenu.class.getResource("/M1.mp3").toString();
+    Media media0 = new Media(path0);
+    MediaPlayer mp0 = new MediaPlayer(media0);
+    
+	// Audio Player(Beta)
+	String path1 = MainMenu.class.getResource("/M2.mp3").toString();
+    Media media1 = new Media(path1);
+    MediaPlayer mp1 = new MediaPlayer(media1);
+    
+    String major;
+    
 	public static void main(String args[]) {
 		launch(args);
 	}
@@ -43,12 +54,6 @@ public class MainMenu extends Application {
 		final Button stats = new Button("Stats");
 		stats.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-text-fill: white;");
 		
-		// Audio Player(Beta)
-		String path = MainMenu.class.getResource("/M1.mp3").toString();
-	    Media media = new Media(path);
-	    MediaPlayer mp = new MediaPlayer(media);
-	    mp.play();
-	    
 		// location of buttons
 		start.setLayoutX(380);
 		start.setLayoutY(200);
@@ -64,7 +69,8 @@ public class MainMenu extends Application {
 		// actions of buttons
 		start.setOnAction(e -> {
 			game(primaryStage);
-			// mp.stop();
+			mp0.stop();
+			mp1.play();
 		});
 
 		sett.setOnAction(e -> {
@@ -89,6 +95,7 @@ public class MainMenu extends Application {
 		scene = new Scene(root, 800, 400, Color.BLACK);
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		mp0.play();
 		
 	}
 
@@ -105,6 +112,8 @@ public class MainMenu extends Application {
 		Button back = new Button("Back");
 		back.setOnAction(e -> {
 			back(ps);
+			mp1.stop();
+			mp0.play();
 		});
 		back.setLayoutX(383);
 		back.setLayoutY(335);
@@ -116,6 +125,23 @@ public class MainMenu extends Application {
 		mj3.setLayoutY(200);
 		mj4.setLayoutX(600);
 		mj4.setLayoutY(200);
+		
+		//mj1.setOnAction(e -> {
+			//game1(primaryStage);
+			//major = "Engineering";
+		//});
+		//mj2.setOnAction(e -> {
+			//game1(primaryStage);
+			//major = "Comp Sci";
+		//});
+		//mj3.setOnAction(e -> {
+			//game1(primaryStage);
+			//major = "Mathematics";
+		//});
+		//mj4.setOnAction(e -> {
+			//game1(primaryStage);
+			//major = "Accounting";
+		//});
 		
 		final Group gs = new Group(mj1, mj2, mj3, mj4, back, title);
 		final Scene sc = new Scene(gs, 800, 400, Color.BLACK);

@@ -4,7 +4,10 @@
 “Alright, stand over in front of the camera, this’ll just take a second.”
 “Although your past is a bit hazy, you find yourself sitting in the middle of the crowd at an introductory presentation.”
 “Which major did you choose when you came to college?”
-“Ah, yes, you remember choosing (insert major here) as your major.” 
+“Ah, yes, you remember choosing Engineering as your major.” 
+“Ah, yes, you remember choosing Computer Science as your major.” 
+“Ah, yes, you remember choosing Mathematics as your major.” 
+“Ah, yes, you remember choosing Acccounting as your major.” 
 “As you listen along, you realize thinking in the second person about yourself is weird, and suddenly, the text changes”
 “Although your choice to go to this college split you from your best friend, you still resolved to communicate with each other on a regular basis.”
 “You realize, to your surprise, that you forgot to put your friend’s name as a contact.”
