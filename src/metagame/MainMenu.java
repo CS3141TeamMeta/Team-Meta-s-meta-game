@@ -53,13 +53,13 @@ public class MainMenu extends Application {
 
 		// Creation of buttons on main menu
 		final Button sett = new Button("Settings");
-		sett.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-text-fill: white;");
+		sett.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
 		final Button start = new Button("Start");
-		start.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-text-fill: white;");
+		start.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
 		final Button exit = new Button("Exit");
-		exit.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-text-fill: white;");
+		exit.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
 		final Button stats = new Button("Stats");
-		stats.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-text-fill: white;");
+		stats.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
 		
 		// location of buttons
 		start.setLayoutX(380);
@@ -210,6 +210,12 @@ public class MainMenu extends Application {
 	}
 	
 	public void game1(Stage ps) {
+		ps.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
+		    @Override
+		    public void handle(MouseEvent mouseEvent) {
+		        System.out.println("mouse click detected! " + mouseEvent.getSource());
+		    }
+		});
 		 StackPane sp = new StackPane();
 		 Image img = new Image("gold.jpg", 800, 400, false, false);
 		 ImageView imgView = new ImageView(img);
