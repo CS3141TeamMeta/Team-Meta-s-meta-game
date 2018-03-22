@@ -16,6 +16,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.layout.StackPane;
 
 public class MainMenu extends Application {
 
@@ -41,7 +42,10 @@ public class MainMenu extends Application {
 	public void start(Stage primaryStage) {
 
 		// Title of Window
-		primaryStage.setTitle("Meta Game");
+		Text t1 = new Text("Meta Game");
+		t1.setFont(Font.font("Gruppo", 20));
+		String s1 = new String(t1.toString());
+		primaryStage.setTitle(s1);
 		
 
 		// Creation of buttons on main menu
@@ -126,28 +130,38 @@ public class MainMenu extends Application {
 		mj4.setLayoutX(600);
 		mj4.setLayoutY(200);
 		
-		//mj1.setOnAction(e -> {
-			//game1(primaryStage);
-			//major = "Engineering";
-		//});
-		//mj2.setOnAction(e -> {
-			//game1(primaryStage);
-			//major = "Comp Sci";
-		//});
-		//mj3.setOnAction(e -> {
-			//game1(primaryStage);
-			//major = "Mathematics";
-		//});
-		//mj4.setOnAction(e -> {
-			//game1(primaryStage);
-			//major = "Accounting";
-		//});
+		mj1.setOnAction(e -> {
+			game1(ps);
+			major = "Engineering";
+		});
+		mj2.setOnAction(e -> {
+			game1(ps);
+			major = "Comp Sci";
+		});
+		mj3.setOnAction(e -> {
+			game1(ps);
+			major = "Mathematics";
+		});
+		mj4.setOnAction(e -> {
+			game1(ps);
+			major = "Accounting";
+		});
 		
 		final Group gs = new Group(mj1, mj2, mj3, mj4, back, title);
 		final Scene sc = new Scene(gs, 800, 400, Color.BLACK);
 		
 		
 		ps.setScene(sc);
+	}
+	
+	public void game1(Stage ps) {
+		 StackPane sp = new StackPane();
+		 Image img = new Image("gold.jpg", 800, 400, false, false);
+		 ImageView imgView = new ImageView(img);
+		 sp.getChildren().add(imgView);
+		 Scene scene = new Scene(sp);
+		 ps.setScene(scene);
+		 ps.show();
 	}
 
 	public void settings(Stage ps) {
