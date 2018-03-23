@@ -213,7 +213,9 @@ public class MainMenu extends Application {
 		ps.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
 		    @Override
 		    public void handle(MouseEvent mouseEvent) {
-		        System.out.println("mouse click detected! " + mouseEvent.getSource());
+		        //System.out.println("mouse click detected! " + mouseEvent.getSource());
+		        System.out.println("“You walk up to the desk to get your MTU ID.” ");
+
 		    }
 		});
 		 StackPane sp = new StackPane();
