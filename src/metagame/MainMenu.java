@@ -19,12 +19,15 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 public class MainMenu extends Application {
 
 	Group root;
 	Scene scene;
+	
+	Frogger frog = new Frogger();
 	// Audio Player(Beta)
 	String path0 = MainMenu.class.getResource("/M1.mp3").toString();
     Media media0 = new Media(path0);
@@ -52,15 +55,27 @@ public class MainMenu extends Application {
 		
 
 		// Creation of buttons on main menu
-		final Button sett = new Button("Settings");
+		Button sett = new Button("Settings");
 		sett.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
-		final Button start = new Button("Start");
+		Button start = new Button("Start");
 		start.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
-		final Button exit = new Button("Exit");
+		Button exit = new Button("Exit");
 		exit.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
-		final Button stats = new Button("Stats");
+		Button stats = new Button("Stats");
 		stats.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
 		
+		final Button mg = new Button("MG test");
+		stats.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
+		mg.setLayoutX(700);
+		mg.setLayoutY(350);
+		mg.setOnAction(e -> {
+			try {
+				frog.start(primaryStage);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
 		// location of buttons
 		start.setLayoutX(380);
 		start.setLayoutY(200);
@@ -150,7 +165,7 @@ public class MainMenu extends Application {
 
 		
 		// creation of the main menu scene
-		root = new Group(start, sett, exit, stats, title);
+		root = new Group(start, sett, exit, stats, title, mg);
 		scene = new Scene(root, 800, 400, Color.WHITE);
 		primaryStage.setScene(scene);
 		primaryStage.show();
@@ -213,9 +228,7 @@ public class MainMenu extends Application {
 		ps.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
 		    @Override
 		    public void handle(MouseEvent mouseEvent) {
-		        //System.out.println("mouse click detected! " + mouseEvent.getSource());
-		        System.out.println("“You walk up to the desk to get your MTU ID.” ");
-
+		        System.out.println("mouse click detected! " + mouseEvent.getSource());
 		    }
 		});
 		 StackPane sp = new StackPane();
