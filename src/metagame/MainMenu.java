@@ -1,11 +1,19 @@
 package metagame;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import javafx.application.Application;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
@@ -26,33 +34,43 @@ public class MainMenu extends Application {
 
 	Group root;
 	Scene scene;
-	
+	public ArrayList<String> dia = new ArrayList<>();
+	scene scn = new scene();
+
 	Frogger frog = new Frogger();
 	// Audio Player(Beta)
 	String path0 = MainMenu.class.getResource("/M1.mp3").toString();
-    Media media0 = new Media(path0);
-    MediaPlayer mp0 = new MediaPlayer(media0);
-    
+	Media media0 = new Media(path0);
+	MediaPlayer mp0 = new MediaPlayer(media0);
+
 	// Audio Player(Beta)
 	String path1 = MainMenu.class.getResource("/M2.mp3").toString();
-    Media media1 = new Media(path1);
-    MediaPlayer mp1 = new MediaPlayer(media1);
-    
-    String major;
-    
+	Media media1 = new Media(path1);
+	MediaPlayer mp1 = new MediaPlayer(media1);
+
+	String major;
+
 	public static void main(String args[]) {
 		launch(args);
 	}
+	
+	
 
 	@Override
 	public void start(Stage primaryStage) {
-
+		
+		try {
+			fread();
+		} catch (FileNotFoundException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		
 		// Title of Window
 		Text t1 = new Text("Meta Game");
 		t1.setFont(Font.font("Gruppo", 20));
 		String s1 = new String(t1.toString());
 		primaryStage.setTitle(s1);
-		
 
 		// Creation of buttons on main menu
 		Button sett = new Button("Settings");
@@ -63,7 +81,7 @@ public class MainMenu extends Application {
 		exit.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
 		Button stats = new Button("Stats");
 		stats.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
-		
+
 		final Button mg = new Button("MG test");
 		stats.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
 		mg.setLayoutX(700);
@@ -94,88 +112,79 @@ public class MainMenu extends Application {
 			mp0.stop();
 			mp1.play();
 		});
-		
+
 		DropShadow shadow = new DropShadow();
-		start.addEventHandler(MouseEvent.MOUSE_ENTERED, 
-		    new EventHandler<MouseEvent>() {
-		        public void handle(MouseEvent e) {
-		            start.setEffect(shadow);
-		        }
+		start.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent e) {
+				start.setEffect(shadow);
+			}
 		});
-		start.addEventHandler(MouseEvent.MOUSE_EXITED, 
-		    new EventHandler<MouseEvent>() {
-		        public void handle(MouseEvent e) {
-		            start.setEffect(null);
-		        }
+		start.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent e) {
+				start.setEffect(null);
+			}
 		});
 
 		sett.setOnAction(e -> {
 			settings(primaryStage);
 		});
-		
-		sett.addEventHandler(MouseEvent.MOUSE_ENTERED, 
-		    new EventHandler<MouseEvent>() {
-		        public void handle(MouseEvent e) {
-		            sett.setEffect(shadow);
-		        }
+
+		sett.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent e) {
+				sett.setEffect(shadow);
+			}
 		});
 
-		sett.addEventHandler(MouseEvent.MOUSE_EXITED, 
-		    new EventHandler<MouseEvent>() {
-		        public void handle(MouseEvent e) {
-		            sett.setEffect(null);
-		        }
+		sett.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent e) {
+				sett.setEffect(null);
+			}
 		});
 
 		stats.setOnAction(e -> {
 			stats(primaryStage);
 		});
-		stats.addEventHandler(MouseEvent.MOUSE_ENTERED, 
-		    new EventHandler<MouseEvent>() {
-		        public void handle(MouseEvent e) {
-		            stats.setEffect(shadow);
-		        }
+		stats.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent e) {
+				stats.setEffect(shadow);
+			}
 		});
-		stats.addEventHandler(MouseEvent.MOUSE_EXITED, 
-		    new EventHandler<MouseEvent>() {
-		        public void handle(MouseEvent e) {
-		            stats.setEffect(null);
-		        }
+		stats.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent e) {
+				stats.setEffect(null);
+			}
 		});
 
 		exit.setOnAction(e -> {
 			primaryStage.close();
 		});
-		exit.addEventHandler(MouseEvent.MOUSE_ENTERED, 
-		    new EventHandler<MouseEvent>() {
-		        public void handle(MouseEvent e) {
-		            exit.setEffect(shadow);
-		        }
+		exit.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent e) {
+				exit.setEffect(shadow);
+			}
 		});
-		exit.addEventHandler(MouseEvent.MOUSE_EXITED, 
-		    new EventHandler<MouseEvent>() {
-		        public void handle(MouseEvent e) {
-		            exit.setEffect(null);
-		        }
+		exit.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent e) {
+				exit.setEffect(null);
+			}
 		});
 		// Title on the main menu
 		final Text title = new Text(300, 100, "Meta Game");
 		title.setFill(Color.BLACK);
 		title.setFont(Font.font(java.awt.Font.MONOSPACED, 40));
 
-		
 		// creation of the main menu scene
 		root = new Group(start, sett, exit, stats, title, mg);
 		scene = new Scene(root, 800, 400, Color.WHITE);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		mp0.play();
-		
+
 	}
 
 	// actions performed when "start" is clicked
 	public void game(Stage ps) {
-		
+
 		Text title = new Text(300, 100, "Select Major");
 		title.setFill(Color.WHITE);
 		title.setFont(Font.font(java.awt.Font.SANS_SERIF, 40));
@@ -199,7 +208,7 @@ public class MainMenu extends Application {
 		mj3.setLayoutY(200);
 		mj4.setLayoutX(600);
 		mj4.setLayoutY(200);
-		
+
 		mj1.setOnAction(e -> {
 			game1(ps);
 			major = "Engineering";
@@ -216,28 +225,28 @@ public class MainMenu extends Application {
 			game1(ps);
 			major = "Accounting";
 		});
-		
+
 		final Group gs = new Group(mj1, mj2, mj3, mj4, back, title);
+		
 		final Scene sc = new Scene(gs, 800, 400, Color.BLACK);
-		
-		
+
 		ps.setScene(sc);
 	}
-	
+
 	public void game1(Stage ps) {
 		ps.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
-		    @Override
-		    public void handle(MouseEvent mouseEvent) {
-		        System.out.println("mouse click detected! " + mouseEvent.getSource());
-		    }
+			@Override
+			public void handle(MouseEvent mouseEvent) {
+				System.out.println("mouse click detected! " + mouseEvent.getSource());
+			}
 		});
-		 StackPane sp = new StackPane();
-		 Image img = new Image("gold.jpg", 800, 400, false, false);
-		 ImageView imgView = new ImageView(img);
-		 sp.getChildren().add(imgView);
-		 Scene scene = new Scene(sp);
-		 ps.setScene(scene);
-		 ps.show();
+		StackPane sp = new StackPane();
+		Image img = new Image("gold.jpg", 800, 400, false, false);
+		ImageView imgView = new ImageView(img);
+		sp.getChildren().add(imgView);
+		Scene scene = new Scene(sp);
+		ps.setScene(scene);
+		ps.show();
 	}
 
 	public void settings(Stage ps) {
@@ -251,7 +260,7 @@ public class MainMenu extends Application {
 		});
 		back.setLayoutX(383);
 		back.setLayoutY(335);
-		
+
 		sl.valueProperty().addListener(new InvalidationListener() {
 			public void invalidated(Observable ov) {
 				if (sl.isValueChanging()) {
@@ -263,7 +272,7 @@ public class MainMenu extends Application {
 
 		sl.setLayoutX(325);
 		sl.setLayoutY(250);
-		
+
 		final Group ss = new Group(sl, back, title);
 		final Scene sc = new Scene(ss, 800, 400, Color.BLACK);
 
@@ -280,7 +289,7 @@ public class MainMenu extends Application {
 		});
 		back.setLayoutX(383);
 		back.setLayoutY(335);
-		
+
 		final Group st = new Group(back, title);
 		final Scene sc = new Scene(st, 800, 400, Color.BLACK);
 		ps.setScene(sc);
@@ -290,4 +299,15 @@ public class MainMenu extends Application {
 		ps.setScene(scene);
 		ps.show();
 	}
+
+	public void fread() throws FileNotFoundException {
+		
+		String path0 = MainMenu.class.getResource("/story.txt").toString();
+		File file = new File("C:\\Users\\manar_000\\git\\Team-Meta-s-meta-game\\bin\\story.txt");
+		Scanner s = new Scanner(file);
+		while (s.hasNext()) {
+			dia.add(s.nextLine());
+		}
+	}
+
 }
