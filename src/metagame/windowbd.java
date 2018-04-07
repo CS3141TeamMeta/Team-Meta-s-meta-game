@@ -12,7 +12,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 
-public class scene extends Application {
+public class windowbd extends Application {
 
 	
 	

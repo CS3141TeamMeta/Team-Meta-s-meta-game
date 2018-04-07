@@ -1,16 +1,30 @@
-//ONLY ADD LINES TO THE END OF THIS FILE
-//FORMAT:
-//LINE OF DIALOG
-//OPTION 1
-//OPTION 2
-//LINE # TO JUMP TO IF OPT 1 CHOSEN (IF GAME TRIGGERED USE "GAME ##")
-//LINE # TO JUMP TO IF OPT 2 CHOSEN (## IS NUMBER OF GAME 01 FOR FROGGER, 02 ect...)
-//NEXT LINE OF DIALOG
-//
-//
-Blarg0
-Blarg1
-Blarg2
-Blarg3
-Blarg4
-Blarg5
+------------------------------------------------------------------
+ONLY ADD LINES TO THE END OF THIS FILE
+
+Format:
+OPCODE (0 for no options) (1 for options) (2 for start minigame)
+LINE OF DIALOG (will be displayed as main scene dialog)
+OPTION 2 (ONLY IF OPCODE SET TO 2 OR 3)
+OPTION 2 (ONLY IF OPCODE SET TO 2 OR 3)
+JUMP TO LINE NUMBER FOR OPTION 1 (ONLY IF OPCODE 2)
+JUMP TO LINE NUMBER FOR OPTION 2 (ONLY IF OPCODE 2)
+NEXT OPCODE FOR NEXT WINDOW
+NEXT LINE OF DIALOG
+...
+
+EXAMPLE:
+
+2
+i wanna die
+kill yourself
+dont do it
+666
+777
+------------------------------------------------------------------
+START HERE:
+
+
+
+
+
+

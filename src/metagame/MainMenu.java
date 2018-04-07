@@ -35,7 +35,7 @@ public class MainMenu extends Application {
 	Group root;
 	Scene scene;
 	public ArrayList<String> dia = new ArrayList<>();
-	scene scn = new scene();
+	windowbd scn = new windowbd();
 
 	Frogger frog = new Frogger();
 	// Audio Player(Beta)
