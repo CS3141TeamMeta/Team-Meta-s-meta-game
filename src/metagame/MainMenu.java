@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -35,7 +37,7 @@ public class MainMenu extends Application {
 	Group root;
 	Scene scene;
 	public ArrayList<String> dia = new ArrayList<>();
-	windowbd scn = new windowbd();
+	//windowbd scn = new windowbd();
 
 	Frogger frog = new Frogger();
 	// Audio Player(Beta)
@@ -57,14 +59,10 @@ public class MainMenu extends Application {
 	
 
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage primaryStage) throws FileNotFoundException {
 		
-		try {
-			fread();
-		} catch (FileNotFoundException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
+		fread();
+		System.out.println(dia.get(9));
 		
 		// Title of Window
 		Text t1 = new Text("Meta Game");
@@ -211,19 +209,31 @@ public class MainMenu extends Application {
 
 		mj1.setOnAction(e -> {
 			game1(ps);
+			Major1 maj = new Major1();
 			major = "Engineering";
+			maj.copy(dia, ps);
+			maj.main(0);
 		});
 		mj2.setOnAction(e -> {
 			game1(ps);
+			Major2 maj = new Major2();
 			major = "Comp Sci";
+			maj.copy(dia, ps);
+			maj.main(0);
 		});
 		mj3.setOnAction(e -> {
 			game1(ps);
+			Major3 maj = new Major3();
 			major = "Mathematics";
+			maj.copy(dia, ps);
+			maj.main(0);
 		});
 		mj4.setOnAction(e -> {
 			game1(ps);
+			Major4 maj = new Major4();
 			major = "Accounting";
+			maj.copy(dia, ps);
+			maj.main(0);
 		});
 
 		final Group gs = new Group(mj1, mj2, mj3, mj4, back, title);
@@ -302,9 +312,10 @@ public class MainMenu extends Application {
 
 	public void fread() throws FileNotFoundException {
 		
-		String path0 = MainMenu.class.getResource("/story.txt").toString();
-		File file = new File("C:\\Users\\manar_000\\git\\Team-Meta-s-meta-game\\bin\\story.txt");
+		//URL path0 = MainMenu.class.getResource("/story.txt");
+		File file = new File("C:\\Users\\Ethan\\git\\Team-Meta-s-meta-game\\bin\\story.txt");
 		Scanner s = new Scanner(file);
+		dia.add("offset");
 		while (s.hasNext()) {
 			dia.add(s.nextLine());
 		}
