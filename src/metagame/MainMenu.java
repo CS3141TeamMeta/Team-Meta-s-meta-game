@@ -313,6 +313,8 @@ public class MainMenu extends Application {
 	public void fread() throws FileNotFoundException {
 		
 		//URL path0 = MainMenu.class.getResource("/story.txt");
+		
+		//FUCK THIS NOISE
 		File file = new File("C:\\Users\\Ethan\\git\\Team-Meta-s-meta-game\\bin\\story.txt");
 		Scanner s = new Scanner(file);
 		dia.add("offset");
