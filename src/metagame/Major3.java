@@ -58,7 +58,7 @@ public class Major3 extends Application {
 		op2.setLayoutY(300);
 		event(op1, op2);
 		Group gs = new Group(t, op1, op2);
-		Scene sc =  new Scene(gs, 800, 400, Color.BLACK);
+		Scene sc =  new Scene(gs, 1000, 600, Color.BLACK);
 		t.wrappingWidthProperty().bind(sc.widthProperty());
 		prm.setScene(sc);
 	}
