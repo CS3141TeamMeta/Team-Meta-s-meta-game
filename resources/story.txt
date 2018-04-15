@@ -23,19 +23,75 @@ dont do it
 ------------------------------------------------------------------
 START HERE:
 
-//0
-//You took your seat fairly quietly, and without disrupting the class too much.
-1
-You are diligently trying to listen to the professor when you notice the person in front of you is playing a Fortnite on their laptop. You arent sure whether you are more mad about them playing games in class and distracting you, or whether its the fact that they are trying to play Fortnite with a touchpad.
-Ask them politely to stop
-Passive aggressively shut their computer and assert your dominance
-35
-35
+You walk up to the desk to get your MTU ID.
+The Desky asks for your name, then tells you to stand in front of the camera. This will just take a second [CAMERA SOUND]
+(Screen flashes(?), then goes black)
+Although your past is a bit hazy, you find yourself sitting in the middle of the crowd at an introductory presentation.
+Which major did you choose when you came to college?
+Ah, yes, you remember choosing [MAJOR] as your major. 
+You make your way back to the residence halls to find your room and meet your roommate for the first time… can you guess his name?
+        nhoJ
+        John
+[JOHN CENA]
+Although your choice to go to this college split you from your best friend, you still resolved to communicate with each other on a regular basis through smoke signals
+The residence halls tried to stop your regular communication with your friend, calling you things like arsonist and terrorist, but these are just silly terms that the government came up with to keep you from becoming too strong together and overthrowing the administration.
+At the next meeting, the overly enthusiastic presenters are met with nearly as enthusiastic responses, you wonder how your first year here will go.
+A few months go by…
+You wake up to the blaring of your roommate’s alarm at 7:30. [ALARM SOUND]
+You groan and roll over, covering your ears with your pillow in a vain attempt to get rid of the noise. 
+After what feels like hours, your roommate finally shuts off their alarm, gets up, and leaves. (footsteps)
+Muttering to yourself how your roommate should really pay more attention, you lazily grab your phone to check the time.
+8:45! Your first class is at 9:00!
+[OPTION FOR SNOOZE] (cycles back to same line of code until you choose to get out of bed)
+[WHAT IS YOUR CLASSES ROOM NUMBER?]
+With a rush of nervous adrenaline, you climb off your bed, pull some clothes on, quickly check your backpack, and run out the door.
+Don’t forget to shut the door!
+Hearing your other roommate yell as you nearly make it away, you quickly shut the door and continue on your way.
+What month is it again? 
+        January?
+        February?
+Looking to the calendar, you realize that it’s already February.
+As you walk towards (ME/CS/??/??) class, you overhear a group of students talking about the class.
+You are about to cross the road to get to campus when you realize that you have to cross a HIGHWAY to get to class. 
+Good luck. [SOUND BITE FROM TAKEN]
+[FROGGER GAME]
+CS:
+You have successfully made it across the street without being crushed by a semi-truck. Congratulations, you coordinated cuss
+What was the room number of your class??
+You arrived to class late because you took so long to get out of bed and cross the road. Good job, [EXPLETIVE DELETED]
+There are a couple seats left open. There is one seat near the front and one seat in the back. Which do you choose? [CHOOSE SEAT]
+You took your seat fairly quietly, and without disrupting the class too much.
+You are diligently trying to listen to the professor when you notice the person in front of you is playing a Fortnite on their laptop. You aren’t sure whether you are more mad about them playing games in class and distracting you, or whether it’s the fact that they are trying to play Fortnite with a touchpad.
+        Ask them politely to stop
+        Passive aggressively shut their computer and assert your dominance
+Ahhh so much better, they stopped gaming. Just peace and quiet while liste.. [someone clicking their pen]
+RAAAGGEEE 
+Oh look, it’s 9:55. Time to go take my first nap for the day
+Freshman year is the time to make friends, go out, do nothing, do rebellious things… and mess up your GPA right off the bat so that you are playing catch up the rest of your college career.
+You have two hours before your class at noon, what do you want to do?
+        Go take a nap
+        Change your roommates entire computer to Comic Sans
+Unfortunately for you roommate, that dude that is ALWAYS in the kitchenette already changed it while you both were in class. 
+Never forget. He is ALWAYS watching
+This day drones on just like many of the rest and suddenly the end of the year is upon you. 
+Since the beginning of the year: your roommate dropped out, the cafeteria food is not nearly as good as preview day, you learned how to say sauna, your toaster learned how to say sauna, the sky is grey, and you stopped looking both ways when crossing the highway. College has finally gotten to you. 
+You feel a call back to your roots. You attempt to contact your friend.
+[FIRE SOUNDS]
+As you leave your room, your toaster remarks, Don’t do this, you remember what happened last time. You ignore your toaster’s probably sound advice, and go outside.
+You are met outside with what can only be described as a madhouse. One of your hallmates is flailing on the ground with foam coming out of his mouth, another one is crawling on the ceiling, and the rest are watching from the peepholes in their door. Do you make a break for the stairwell?
+        Yes
+        No
+Before you can even make a decision, you hear the RA yell from down the hall GET THE PLUNGER!!! Because that is obviously the only way to pull someone down from the ceiling. Unfortunately the foaming hallmate is too far gone and must be put down by the RA on rounds tonight.
+As you turn around to return to the only safe place that you know of, your eyes meet the glazed over eyes of a zombie-like thing just down the hall. 
+Your room is halfway between the two of you. Can you make it to your room before him?
+        RUN!
+        Freeze and maybe he can’t see you(T-Rex philosophy)
+It starts running at you so you sprint towards your door!
+You reach your door just in time….  Only to realize that John locked you out of the room
+College is over for you. Better luck next time
 
-1
-Ahhh so much better, they stopped gaming. Just peace and quiet. [someone clicking their pen]
-Something
-Something
+
+The End?
 
 
 
