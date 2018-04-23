@@ -2,42 +2,59 @@
 ONLY ADD LINES TO THE END OF THIS FILE
 
 Format:
-OPCODE (0 for no options) (1 for options) (2 for start minigame)
 LINE OF DIALOG (will be displayed as main scene dialog)
 OPTION 2 (ONLY IF OPCODE SET TO 2 OR 3)
 OPTION 2 (ONLY IF OPCODE SET TO 2 OR 3)
-JUMP TO LINE NUMBER FOR OPTION 1 (ONLY IF OPCODE 2)
-JUMP TO LINE NUMBER FOR OPTION 2 (ONLY IF OPCODE 2)
-NEXT OPCODE FOR NEXT WINDOW
 NEXT LINE OF DIALOG
 ...
 
 EXAMPLE:
 
-2
 i wanna die
 kill yourself
 dont do it
-666
-777
+
 ------------------------------------------------------------------
-START HERE:
+
 
 You walk up to the desk to get your MTU ID.
-The Desky asks for your name, then tells you to stand in front of the camera. This will just take a second [CAMERA SOUND]
-(Screen flashes(?), then goes black)
+The Desky asks for your name, then tells you to stand in front of the camera. This will just take a second
 Although your past is a bit hazy, you find yourself sitting in the middle of the crowd at an introductory presentation.
-Which major did you choose when you came to college?
-Ah, yes, you remember choosing [MAJOR] as your major. 
-You make your way back to the residence halls to find your room and meet your roommate for the first timeâ€¦ can you guess his name?
-        nhoJ
-        John
-[JOHN CENA]
+Next
+As a new CS student you can't wait to learn all about the wonderful world of programming, and bad hygiene
+Next
+You make your way back to the residence halls to find your room and meet your roommate for the first time… can you guess his name?
+John C
+C nhoJ
 Although your choice to go to this college split you from your best friend, you still resolved to communicate with each other on a regular basis through smoke signals
+Next
 The residence halls tried to stop your regular communication with your friend, calling you things like arsonist and terrorist, but these are just silly terms that the government came up with to keep you from becoming too strong together and overthrowing the administration.
-At the next meeting, the overly enthusiastic presenters are met with nearly as enthusiastic responses, you wonder how your first year here will go.
-A few months go byâ€¦
-You wake up to the blaring of your roommateâ€™s alarm at 7:30. [ALARM SOUND]
+Next
+A few months go by…
+Next
+You wake up to the blaring of your alarm at 8:55, your class is at 9
+Screw it
+Be responsible
+You Dash out of bed and down to the road
+Next
+As you get to class you remember, its actually winter carnival.  You almost died for nothing.
+Hike back to your room
+pass out and wait for nightfall
+You pass out in the snow until nightfall, when you wake up you realize its time to build the ice sculptures
+Next
+You return to your room and pass out until nightfall, when you wake up you realize its time to build the ice sculptures
+Next
+Now that the ice sculpture is build, you return to your room and try to get some sleep
+Spend the entire night on your phone
+Actually get some sleep
+You wake up to hear your RA doing rounds, and the sound of his plunger legs slowly lulls you to sleep again
+Next
+After a few hours spend spent on you phone you hear your RA doing rounds, and the sound of his plunger legs slowly lulls you to sleep
+Next
+That's all for this demo, get the full game on git
+You've failed all you classes and are forced to drop out. Good job
+
+
 You groan and roll over, covering your ears with your pillow in a vain attempt to get rid of the noise. 
 After what feels like hours, your roommate finally shuts off their alarm, gets up, and leaves. (footsteps)
 Muttering to yourself how your roommate should really pay more attention, you lazily grab your phone to check the time.
@@ -45,12 +62,12 @@ Muttering to yourself how your roommate should really pay more attention, you la
 [OPTION FOR SNOOZE] (cycles back to same line of code until you choose to get out of bed)
 [WHAT IS YOUR CLASSES ROOM NUMBER?]
 With a rush of nervous adrenaline, you climb off your bed, pull some clothes on, quickly check your backpack, and run out the door.
-Donâ€™t forget to shut the door!
+Don’t forget to shut the door!
 Hearing your other roommate yell as you nearly make it away, you quickly shut the door and continue on your way.
 What month is it again? 
         January?
         February?
-Looking to the calendar, you realize that itâ€™s already February.
+Looking to the calendar, you realize that it’s already February.
 As you walk towards (ME/CS/??/??) class, you overhear a group of students talking about the class.
 You are about to cross the road to get to campus when you realize that you have to cross a HIGHWAY to get to class. 
 Good luck. [SOUND BITE FROM TAKEN]
@@ -61,13 +78,13 @@ What was the room number of your class??
 You arrived to class late because you took so long to get out of bed and cross the road. Good job, [EXPLETIVE DELETED]
 There are a couple seats left open. There is one seat near the front and one seat in the back. Which do you choose? [CHOOSE SEAT]
 You took your seat fairly quietly, and without disrupting the class too much.
-You are diligently trying to listen to the professor when you notice the person in front of you is playing a Fortnite on their laptop. You arenâ€™t sure whether you are more mad about them playing games in class and distracting you, or whether itâ€™s the fact that they are trying to play Fortnite with a touchpad.
+You are diligently trying to listen to the professor when you notice the person in front of you is playing a Fortnite on their laptop. You aren’t sure whether you are more mad about them playing games in class and distracting you, or whether it’s the fact that they are trying to play Fortnite with a touchpad.
         Ask them politely to stop
         Passive aggressively shut their computer and assert your dominance
 Ahhh so much better, they stopped gaming. Just peace and quiet while liste.. [someone clicking their pen]
 RAAAGGEEE 
-Oh look, itâ€™s 9:55. Time to go take my first nap for the day
-Freshman year is the time to make friends, go out, do nothing, do rebellious thingsâ€¦ and mess up your GPA right off the bat so that you are playing catch up the rest of your college career.
+Oh look, it’s 9:55. Time to go take my first nap for the day
+Freshman year is the time to make friends, go out, do nothing, do rebellious things… and mess up your GPA right off the bat so that you are playing catch up the rest of your college career.
 You have two hours before your class at noon, what do you want to do?
         Go take a nap
         Change your roommates entire computer to Comic Sans
@@ -77,7 +94,7 @@ This day drones on just like many of the rest and suddenly the end of the year i
 Since the beginning of the year: your roommate dropped out, the cafeteria food is not nearly as good as preview day, you learned how to say sauna, your toaster learned how to say sauna, the sky is grey, and you stopped looking both ways when crossing the highway. College has finally gotten to you. 
 You feel a call back to your roots. You attempt to contact your friend.
 [FIRE SOUNDS]
-As you leave your room, your toaster remarks, Donâ€™t do this, you remember what happened last time. You ignore your toasterâ€™s probably sound advice, and go outside.
+As you leave your room, your toaster remarks, Don’t do this, you remember what happened last time. You ignore your toaster’s probably sound advice, and go outside.
 You are met outside with what can only be described as a madhouse. One of your hallmates is flailing on the ground with foam coming out of his mouth, another one is crawling on the ceiling, and the rest are watching from the peepholes in their door. Do you make a break for the stairwell?
         Yes
         No
@@ -85,14 +102,11 @@ Before you can even make a decision, you hear the RA yell from down the hall GET
 As you turn around to return to the only safe place that you know of, your eyes meet the glazed over eyes of a zombie-like thing just down the hall. 
 Your room is halfway between the two of you. Can you make it to your room before him?
         RUN!
-        Freeze and maybe he canâ€™t see you(T-Rex philosophy)
+        Freeze and maybe he can’t see you(T-Rex philosophy)
 It starts running at you so you sprint towards your door!
-You reach your door just in timeâ€¦.  Only to realize that John locked you out of the room
+You reach your door just in time….  Only to realize that John locked you out of the room
 College is over for you. Better luck next time
 
 
 The End?
-
-
-
 

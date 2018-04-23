@@ -8,6 +8,8 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -30,8 +32,7 @@ public class Major2 extends Application {
 		switch (jump) {
 
 		case 0:
-			sysout(dialog.get(29), dialog.get(30), dialog.get(31));
-			break;
+			sysout(dialog.get(20), dialog.get(21), "admin1.jpg");
 		case 1:
 			sysout(dialog.get(36), dialog.get(37), dialog.get(38));
 			break;
@@ -45,21 +46,54 @@ public class Major2 extends Application {
 		}
 	}
 	
-	public void sysout(String intext, String opt1, String opt2) {
+	public void sysout(String intext, String opt1, String opt2, String imgname) {
 		
-		Text t = new Text(20, 50, intext);
-		t.setFill(Color.WHITE);
+		Text t = new Text(150,50, intext);
+		t.setStyle("-fx-fill: white; -fx-stroke: black; -fx-stroke-width: .9px;");
+		t.setFont(Font.font("Comic Sans MS", 24));
 		Button op1 = new Button(opt1);
 		op1.setLayoutX(150);
-		op1.setLayoutY(250);
-		t.setFont(Font.font("Comic Sans MS", 20));
+		op1.setLayoutY(400);
+		op1.setStyle(
+				"-fx-font:14 arial; -fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
+		op1.setPrefHeight(50);
 		Button op2 = new Button(opt2);
 		op2.setLayoutX(150);
-		op2.setLayoutY(300);
+		op2.setLayoutY(450);
+		op2.setStyle(
+				"-fx-font:14 arial; -fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
+		op2.setPrefHeight(50);
 		event(op1, op2);
-		Group gs = new Group(t, op1, op2);
-		Scene sc =  new Scene(gs, 1000, 600, Color.BLACK);
-		t.wrappingWidthProperty().bind(sc.widthProperty());
+		Image img =new Image(imgname);
+		ImageView imgView = new ImageView(img);
+		imgView.setFitHeight(600);
+		imgView.setFitWidth(1000);
+		Group gs = new Group(imgView, t, op1, op2);
+		Scene sc = new Scene(gs, 1000, 600, Color.BLACK);
+		t.setWrappingWidth(750);
+		prm.setScene(sc);
+	}
+	
+	public void sysout(String intext, String opt1, String imgname) {
+
+		Text t = new Text(150,50, intext);
+		t.setStyle("-fx-fill: white; -fx-stroke: black; -fx-stroke-width: .9px;");
+		t.setFont(Font.font("Comic Sans MS", 24));	
+		Button op1 = new Button(opt1);
+		op1.setLayoutX(150);
+		op1.setLayoutY(400);
+		op1.setStyle(
+				"-fx-font:14 arial; -fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
+		op1.setPrefHeight(50);
+		Button op2 = new Button();
+		event(op1, op2);
+		Image img =new Image(imgname);
+		ImageView imgView = new ImageView(img);
+		imgView.setFitHeight(600);
+		imgView.setFitWidth(1000);
+		Group gs = new Group(imgView, t, op1);
+		Scene sc = new Scene(gs, 1000, 600, Color.BLACK);
+		t.setWrappingWidth(750);
 		prm.setScene(sc);
 	}
 

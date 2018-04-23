@@ -1,21 +1,14 @@
 package metagame;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import javafx.application.Application;
-
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
@@ -29,8 +22,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 
 public class MainMenu extends Application {
 
@@ -40,7 +31,8 @@ public class MainMenu extends Application {
 	double difficulty;
 	String major;
 	Frogger frog = new Frogger();
-
+	TetrisApp tetris = new TetrisApp();
+	
 	// Audio Player(Beta)
 	String path0 = MainMenu.class.getResource("/M1.mp3").toString();
 	Media media0 = new Media(path0);
@@ -80,18 +72,18 @@ public class MainMenu extends Application {
 		stats.setStyle(
 				"-fx-font:14 arial; -fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
 
-		final Button mg = new Button("MG test");
-		mg.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
-		mg.setLayoutX(700);
-		mg.setLayoutY(350);
-		mg.setOnAction(e -> {
-			try {
-				frog.start(primaryStage);
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-		});
-		// location of buttons
+//		final Button mg = new Button("MG test");
+//		mg.setStyle("-fx-background-color: linear-gradient(#100C08, #100D08); -fx-text-fill: white;");
+//		mg.setLayoutX(700);
+//		mg.setLayoutY(350);
+//		mg.setOnAction(e -> {
+//			try {
+//				tetris.start(primaryStage, scene);
+//			} catch (Exception e1) {
+//				e1.printStackTrace();
+//			}
+//		});
+		//location of buttons
 		start.setLayoutX(225);
 		start.setLayoutY(525);
 		start.setPrefSize(100, 50);
@@ -110,7 +102,7 @@ public class MainMenu extends Application {
 		// actions of buttons
 		start.setOnAction(e -> {
 			game(primaryStage);
-			mp0.stop();
+//			mp0.stop();
 			mp1.play();
 		});
 
@@ -182,11 +174,12 @@ public class MainMenu extends Application {
 		ImageView imgView = new ImageView(img);
 		
 		// creation of the main menu scene
-		root = new Group(imgView, start, sett, exit, stats, title, mg);
+		//root = new Group(imgView, start, sett, exit, stats, title, mg);
+		root = new Group(imgView, start, sett, exit, stats, title);
 		scene = new Scene(root, 1000, 600, Color.WHITE);
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		mp0.play();
+//		mp0.play();
 
 	}
 
@@ -223,7 +216,7 @@ public class MainMenu extends Application {
 		back.setOnAction(e -> {
 			back(ps);
 			mp1.stop();
-			mp0.play();
+//			mp0.play();
 		});
 		back.setLayoutX(450);
 		back.setLayoutY(500);
@@ -242,6 +235,7 @@ public class MainMenu extends Application {
 			major = "Engineering";
 			maj.copy(dia, ps);
 			maj.main(0);
+			mp1.stop();
 		});
 		mj2.setOnAction(e -> {
 			//game1(ps);
@@ -249,6 +243,7 @@ public class MainMenu extends Application {
 			major = "Comp Sci";
 			maj.copy(dia, ps);
 			maj.main(0);
+			mp1.stop();
 		});
 		mj3.setOnAction(e -> {
 			//game1(ps);
@@ -256,6 +251,7 @@ public class MainMenu extends Application {
 			major = "Mathematics";
 			maj.copy(dia, ps);
 			maj.main(0);
+			mp1.stop();
 		});
 		mj4.setOnAction(e -> {
 			//game1(ps);
@@ -263,6 +259,7 @@ public class MainMenu extends Application {
 			major = "Accounting";
 			maj.copy(dia, ps);
 			maj.main(0);
+			mp1.stop();
 		});
 
 		
@@ -270,7 +267,6 @@ public class MainMenu extends Application {
 		ImageView imgView = new ImageView(img);
 		final Group gs = new Group(imgView, mj1, mj2, mj3, mj4, back, title);
 		final Scene sc = new Scene(gs, 1000, 600, Color.BLACK);
-
 		ps.setScene(sc);
 	}
 
@@ -298,7 +294,7 @@ public class MainMenu extends Application {
 		sl.valueProperty().addListener(new InvalidationListener() {
 			public void invalidated(Observable ov) {
 				if (sl.isValueChanging()) {
-					mp0.setVolume(sl.getValue() / 100);
+//					mp0.setVolume(sl.getValue() / 100);
 				}
 			}
 		});
